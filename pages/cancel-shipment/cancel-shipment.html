@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kargo İptal</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="cancel-shipment.css" />
+	</head>
+	<body>
+		<div id="app">
+			<button id="backToDashboardButton" class="back-button">Geri</button>
+			<div class="header">
+				<img src="../../assets/wifispot_logo.png" alt="WiFiSpot Logo" />
+				<h1>Kargo İptal</h1>
+			</div>
+			<div class="split-container">
+				<div class="left-panel">
+					<div class="form-section">
+						<h2>Zorunlu Bilgiler</h2>
+						<div id="cargoKeysContainer" class="form-group">
+							<label for="cargoKey-0">Kargo Anahtarı</label>
+							<input
+								id="cargoKey-0"
+								type="text"
+								placeholder="Kargo Anahtarı"
+							/>
+						</div>
+						<button id="addCargoKeyButton">+ Anahtar Ekle</button>
+						<button id="submitCancelButton">
+							Kargoyu İptal Et
+						</button>
+					</div>
+				</div>
+				<div class="right-panel">
+					<h2>API Cevabı</h2>
+					<pre id="apiResponse"></pre>
+				</div>
+			</div>
+		</div>
+		<div id="shipmentReceiptModal" class="modal hidden">
+			<div class="modal-content">
+				<span class="close-modal">&times;</span>
+				<div
+					id="receiptContent"
+					style="overflow-y: auto; max-height: 80vh"
+				></div>
+				<div class="modal-actions">
+					<button id="printReceipt">Yazdır</button>
+					<button id="openReceiptWindow">Yeni Pencerede Aç</button>
+					<button id="toggleJsonBtn" style="display: none">
+						JSON Göster
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="cancel-shipment.js"></script>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+const { contextBridge } = require("electron");
+
+contextBridge.exposeInMainWorld("electronAPI", {
+	getCredentials: () => ({
+		TEST_USERNAME: process.env.TEST_USERNAME,
+		TEST_PASSWORD: process.env.TEST_PASSWORD,
+		GONORMAL_USERNAME: process.env.GONORMAL_USERNAME,
+		GONORMAL_PASSWORD: process.env.GONORMAL_PASSWORD,
+		GOTAHSILAT_USERNAME: process.env.GOTAHSILAT_USERNAME,
+		GOTAHSILAT_PASSWORD: process.env.GOTAHSILAT_PASSWORD,
+		AONORMAL_USERNAME: process.env.AONORMAL_USERNAME,
+		AONORMAL_PASSWORD: process.env.AONORMAL_PASSWORD,
+		AOTAHSILAT_USERNAME: process.env.AOTAHSILAT_USERNAME,
+		AOTAHSILAT_PASSWORD: process.env.AOTAHSILAT_PASSWORD,
+	}),
+});

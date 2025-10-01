@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kargo Sorgula</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="query-shipment.css" />
+	</head>
+	<body>
+		<div id="app">
+			<button id="backToDashboardButton" class="back-button">Geri</button>
+			<div class="header">
+				<img src="../../assets/wifispot_logo.png" alt="WiFiSpot Logo" />
+				<h1>Kargo Sorgula</h1>
+			</div>
+			<div class="split-container">
+				<div class="left-panel">
+					<div class="form-section">
+						<h2>Zorunlu Bilgiler</h2>
+						<div id="keysContainer" class="form-group">
+							<label for="key-0">Anahtar</label>
+							<input
+								id="key-0"
+								type="text"
+								placeholder="Anahtar"
+							/>
+						</div>
+						<button id="addKeyButton">+ Anahtar Ekle</button>
+						<div class="form-group">
+							<label for="keyType">Anahtar Türü</label>
+							<select id="keyType">
+								<option value="">Seçiniz</option>
+								<option value="0">Kargo Anahtarı</option>
+								<option value="1">Fatura Anahtarı</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="addHistoricalData"
+								>Geçmiş Verileri Ekle</label
+							>
+							<input id="addHistoricalData" type="checkbox" />
+						</div>
+						<div class="form-group">
+							<label for="onlyTracking">Sadece Takip</label>
+							<input id="onlyTracking" type="checkbox" />
+						</div>
+						<button id="submitQueryButton">Sorgula</button>
+					</div>
+				</div>
+				<div class="right-panel">
+					<h2>API Cevabı</h2>
+					<pre id="apiResponse"></pre>
+				</div>
+			</div>
+		</div>
+		<div id="shipmentReceiptModal" class="modal hidden">
+			<div class="modal-content">
+				<span class="close-modal">&times;</span>
+				<div id="receiptContent"></div>
+				<div class="modal-actions">
+					<button id="printReceipt">Yazdır</button>
+					<button id="openReceiptWindow">Yeni Pencerede Aç</button>
+					<button id="toggleJsonBtn" style="display: none">
+						JSON Göster
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="query-shipment.js"></script>
+	</body>
+</html>

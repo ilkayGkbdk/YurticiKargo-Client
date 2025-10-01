@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Yurtiçi Kargo Fatura Bilgi</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div id="main-page">
+				<div class="header">
+					<img src="assets/wifispot_logo.png" alt="WiFiSpot Logo" />
+					<h1>Yurtiçi Kargo Fatura Bilgi</h1>
+					<p>
+						Giriş yaptıktan sonra gerekli yönlendirme yapılacaktır.
+					</p>
+				</div>
+				<div class="form-container">
+					<div class="form-section">
+						<h2>Giriş Türü Seçiniz</h2>
+						<select id="loginTypePicker">
+							<option value="">Seçim Yapınız</option>
+							<option value="Test">Test</option>
+							<option value="GoNormal">GoNormal</option>
+							<option value="GoTahsilat">GoTahsilat</option>
+							<option value="AoNormal">AoNormal</option>
+							<option value="AoTahsilat">AoTahsilat</option>
+						</select>
+					</div>
+					<div class="form-section">
+						<h2 id="loginTypeLabel">Giriş Bilgilerini Giriniz</h2>
+						<input
+							id="usernameEntry"
+							type="text"
+							placeholder="Kullanıcı Adı"
+						/>
+						<input
+							id="passwordEntry"
+							type="password"
+							placeholder="Şifre"
+						/>
+						<button id="loginButton">Giriş Yap</button>
+					</div>
+				</div>
+			</div>
+			<div id="dashboard-page" class="hidden">
+				<button id="backToMainButton" class="back-button">Geri</button>
+				<div class="header">
+					<img src="assets/wifispot_logo.png" alt="WiFiSpot Logo" />
+					<h1 id="userInfoLabel">Yükleniyor...</h1>
+				</div>
+				<div class="form-section">
+					<h2>Yapılacak İşlemi Seçiniz</h2>
+					<div class="button-group">
+						<button id="createShipmentButton">Kargo Oluştur</button>
+						<button id="queryShipmentButton">Kargo Sorgula</button>
+						<button id="cancelShipmentButton">Kargo İptal</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="renderer.js"></script>
+	</body>
+</html>
