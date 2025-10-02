@@ -27,9 +27,13 @@ module.exports = {
 			name: "@electron-forge/maker-squirrel",
 			config: {
 				name: "yurticielectron",
-				authors: "WifiSpot",
-				description: "Yurtici Electron Client",
+				authors: "İlkay Gökbudak",
+				description: "Yurtici Electron Desktop Client",
 			},
+		},
+		{
+			name: "@electron-forge/maker-zip",
+			platforms: ["win32"],
 		},
 	],
 	plugins: [
