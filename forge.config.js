@@ -23,6 +23,14 @@ module.exports = {
 			name: "@electron-forge/maker-rpm",
 			config: {},
 		},
+		{
+			name: "@electron-forge/maker-squirrel",
+			config: {
+				name: "yurticielectron",
+				authors: "WifiSpot",
+				description: "Yurtici Electron Client",
+			},
+		},
 	],
 	plugins: [
 		{
