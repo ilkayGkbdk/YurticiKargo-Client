@@ -16,6 +16,24 @@ body {
   background-color: #F1F5F9;
 }
 
+.back-button {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  padding: 8px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: 1.5px solid #1E293B;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.15s;
+}
+
+.back-button:hover {
+  background-color: #334155;
+  border-color: #334155;
+}
+
 .header {
   text-align: center;
   margin-bottom: 20px;
@@ -34,18 +52,6 @@ body {
   margin: 5px 0;
 }
 
-.header p {
-  font-size: 14px;
-  color: #1E293B;
-  margin: 5px 0;
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .form-section {
   background-color: #FFFFFF;
   border: 1.5px solid #E5E7EB;
@@ -61,24 +67,13 @@ body {
   margin-bottom: 10px;
 }
 
-select, input {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  font-family: 'Roboto', sans-serif;
-  border: 1.5px solid #E5E7EB;
-  background-color: #F8FAFC;
-  color: #1E293B;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-select:focus, input:focus {
-  outline: none;
-  border-color: #1E293B;
-}
-
-button {
+.button-group button {
   width: 100%;
   padding: 8px;
   font-size: 14px;
@@ -91,13 +86,9 @@ button {
   transition: background 0.15s;
 }
 
-button:hover {
+.button-group button:hover {
   background-color: #334155;
   border-color: #334155;
-}
-
-.hidden {
-  display: none;
 }
 
 @media (max-width: 600px) {
@@ -105,11 +96,11 @@ button:hover {
     margin: 10px;
   }
 
-  .form-container {
-    gap: 15px;
-  }
-
   .form-section {
     padding: 10px;
+  }
+
+  .button-group {
+    gap: 8px;
   }
 }

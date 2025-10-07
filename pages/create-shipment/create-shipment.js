@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const submitShipmentButton = document.getElementById(
 		"submitShipmentButton"
 	);
-	const apiResponse = document.getElementById("apiResponse");
 
 	let shipmentCount = 1;
 	let lastApiData = null;
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let lastViewMode = "receipt";
 
 	backToDashboardButton.addEventListener("click", () => {
-		window.location.href = "../../index.html";
+		window.location.href = "../dashboard/dashboard.html";
 	});
 
 	function createShipmentForm(shipmentId) {
@@ -244,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				desi: document.getElementById(`desi-${shipmentId}`).value
 					? parseFloat(
 							document.getElementById(`desi-${shipmentId}`).value
-					  )
+						)
 					: null,
 				desiSpecified:
 					document.getElementById(`desiSpecified-${shipmentId}`)
@@ -252,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				kg: document.getElementById(`kg-${shipmentId}`).value
 					? parseFloat(
 							document.getElementById(`kg-${shipmentId}`).value
-					  )
+						)
 					: null,
 				kgSpecified:
 					document.getElementById(`kgSpecified-${shipmentId}`)
@@ -262,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					? parseInt(
 							document.getElementById(`cargoCount-${shipmentId}`)
 								.value
-					  )
+						)
 					: null,
 				waybillNo:
 					document.getElementById(`waybillNo-${shipmentId}`).value ||
@@ -286,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							document.getElementById(
 								`ttInvoiceAmount-${shipmentId}`
 							).value
-					  )
+						)
 					: null,
 				ttInvoiceAmountSpecified:
 					document.getElementById(
@@ -299,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							document.getElementById(
 								`ttDocumentId-${shipmentId}`
 							).value
-					  )
+						)
 					: null,
 				ttDocumentSaveType:
 					document.getElementById(`ttDocumentSaveType-${shipmentId}`)
@@ -319,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					? parseInt(
 							document.getElementById(`taxOfficeId-${shipmentId}`)
 								.value
-					  )
+						)
 					: null,
 				taxOfficeName:
 					document.getElementById(`taxOfficeName-${shipmentId}`)
@@ -337,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							document.getElementById(
 								`dcSelectedCredit-${shipmentId}`
 							).value
-					  )
+						)
 					: null,
 				dcCreditRule: document.getElementById(
 					`dcCreditRule-${shipmentId}`
@@ -346,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							document.getElementById(
 								`dcCreditRule-${shipmentId}`
 							).value
-					  )
+						)
 					: null,
 				emailAddress:
 					document.getElementById(`emailAddress-${shipmentId}`)
@@ -411,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				html += `<tr><td><b>${key}</b></td><td>${
 					value.length > 0
 						? "<ul>" +
-						  value
+							value
 								.map(
 									(v) =>
 										`<li>${
@@ -421,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
 										}</li>`
 								)
 								.join("") +
-						  "</ul>"
+							"</ul>"
 						: "-"
 				}</td></tr>`;
 			} else if (typeof value === "object" && value !== null) {

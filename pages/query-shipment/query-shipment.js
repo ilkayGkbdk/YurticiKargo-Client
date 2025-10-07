@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let lastViewMode = "receipt";
 
 	backToDashboardButton.addEventListener("click", () => {
-		window.location.href = "../../index.html";
+		window.location.href = "../dashboard/dashboard.html";
 	});
 
 	addKeyButton.addEventListener("click", () => {
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				html += `<tr><td><b>${key}</b></td><td>${
 					value.length > 0
 						? "<ul>" +
-						  value
+							value
 								.map(
 									(v) =>
 										`<li>${
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 										}</li>`
 								)
 								.join("") +
-						  "</ul>"
+							"</ul>"
 						: "-"
 				}</td></tr>`;
 			} else if (typeof value === "object" && value !== null) {
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					item.shippingDeliveryItemDetailVO
 						? `<div class='shipment-detail-subtitle'>Teslimat Detayları</div><div class='shipment-detail-table'>${renderDetailTable(
 								item.shippingDeliveryItemDetailVO
-						  )}</div>`
+							)}</div>`
 						: ""
 				}
               </div>

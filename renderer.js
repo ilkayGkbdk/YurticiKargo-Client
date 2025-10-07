@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		"cancelShipmentButton"
 	);
 	const mainPage = document.getElementById("main-page");
-	const dashboardPage = document.getElementById("dashboard-page");
 
 	// Get credentials from environment variables
 	const credentials = window.electronAPI.getCredentials();
@@ -81,12 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			if (response.ok) {
 				const data = await response.json();
+				// Kullanıcı bilgisini sessionStorage'a kaydet
+				sessionStorage.setItem("userType", data.userType);
 				alert(
 					`Giriş başarılı! Kullanıcı: ${data.userType}. Dashboard'a yönlendirileceksiniz.`
 				);
-				mainPage.classList.add("hidden");
-				dashboardPage.classList.remove("hidden");
-				loadUserInfo();
+				window.location.href = "./pages/dashboard/dashboard.html";
 			} else {
 				const error = await response.text();
 				alert(`Giriş başarısız oldu: ${error}`);
@@ -120,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	backToMainButton.addEventListener("click", () => {
-		dashboardPage.classList.add("hidden");
 		mainPage.classList.remove("hidden");
 	});
 
